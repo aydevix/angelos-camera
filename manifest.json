@@ -1,0 +1,30 @@
+{
+  "id": "camera",
+  "name": {"ru": "Камера", "en": "Camera"},
+  "version": "1.0.0",
+  "author": "angelOS",
+  "description": {
+    "ru": "Приложение «Камера»: фото и видео, переключение камер и микрофонов (если в системе их несколько). Открывается клавишами из настроек плагина или из меню рабочего стола. Закрывается только крестиком окна или системной комбинацией (Win+Q в пиксельной теме, Mod+W в macOS).",
+    "en": "The Camera app: photos and videos, switching cameras and microphones (when the system has several). Opens with the keys set on the plugin's own settings page, or from the desktop menu. Closes only through the window's × or the system combo (Win+Q on the pixel theme, Mod+W on macOS)."
+  },
+  "icon": "camera",
+  "enabledByDefault": true,
+  "themes": ["pixel", "mac"],
+  "menu": [
+    { "label": {"ru": "Камера", "en": "Camera"}, "icon": "camera", "exec": "qs -c angelos ipc call camera open" }
+  ],
+  "settings": "Settings.qml",
+  "main": "Main.qml",
+  "achievements": [
+    { "id": "first-shot",
+      "name": {"ru": "Первый снимок", "en": "First shot"},
+      "desc": {"ru": "Сделать фото", "en": "Take a photo"}, "icon": "camera" },
+    { "id": "first-video",
+      "name": {"ru": "Оператор", "en": "Camcorder"},
+      "desc": {"ru": "Снять видео", "en": "Record a video"}, "icon": "play" },
+    { "id": "many-cams",
+      "name": {"ru": "Другой глаз", "en": "Another eye"},
+      "desc": {"ru": "Переключить камеру на другую", "en": "Switch to another camera"},
+      "icon": "rotate", "goal": 10 }
+  ]
+}
